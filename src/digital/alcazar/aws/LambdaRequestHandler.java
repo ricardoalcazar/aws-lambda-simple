@@ -20,6 +20,12 @@ public class LambdaRequestHandler implements RequestHandler<Map<String,String>, 
 	    
 	    // Log execution details to CloudWatch logs
 	    logger.log("ENVIRONMENT VARIABLES: " + gson.toJson(System.getenv()));
+	    
+	    
+	    logger.log("TestEnvironmentVar: " + System.getenv("TestEnvironmentVar") + "\n\n");
+	    logger.log("Modify the environment value: \n\n");
+	    System.setProperty("TestEnvironmentVar","hochimunsit");
+	    
 	    logger.log("CONTEXT: " + gson.toJson(context));
 	    
 	    // Log process event details
